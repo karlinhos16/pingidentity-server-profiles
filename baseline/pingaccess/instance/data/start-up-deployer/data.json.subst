@@ -225,7 +225,7 @@
         "pingFederateAdmin": {
             "adminUsername": "${ROOT_USER}",
             "adminPassword": {
-                "value": "2FederateM0re"
+                "value": "${PING_IDENTITY_PASSWORD}"
             },
             "host": "${PF_ADMIN_PRIVATE_HOSTNAME}",
             "port": ${PF_ADMIN_PRIVATE_PORT_HTTPS},
