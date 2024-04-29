@@ -1,5 +1,5 @@
 ldap.url=ldap://${PD_ENGINE_PRIVATE_HOSTNAME}:${LDAP_PORT}
-ldap.url.ping=ldap://${PD_DEMO}-${OA2_PING}:${PD_ENGINE_PRIVATE_PORT_LDAP}
+ldap.url.ping=${PD_DEMO}
 ldap.type=${PF_LDAP_TYPE}
 ldap.username=cn=pingfederate
 ldap.password=${PING_IDENTITY_PASSWORD}

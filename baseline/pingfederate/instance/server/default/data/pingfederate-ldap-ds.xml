@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ldap:ldap-sources xmlns:ldap="http://pingidentity.com/2004/09/ldap-ds">
+    <ldap:ldap-source id="LDAP-D803C87FAB2ADFB4B0A947B64BA6F0C6093A5CA3" maskAttributeValues="false" ldapType="PingDirectory" ldapTypeDesc="PingDirectory" lastModified="2024-04-29T19:32:01.709Z" testOnBorrow="false" testOnReturn="false" createIfNecessary="true" retryFailedOperations="false" minIdle="10" maxActive="100" maxWait="-1" timeBetweenEvictionRunsMillis="60000" readTimeoutMillis="3000" connTimeoutMillis="3000" verifyHost="true" dnsTtlMillis="60000" ldapDnsSrvPrefix="_ldap._tcp" ldapsDnsSrvPrefix="_ldaps._tcp">
+        <ldap:host>${ldap.url.ping}</ldap:host>
+        <ldap:principal>cn=pingfederate</ldap:principal>
+        <ldap:use-ssl>false</ldap:use-ssl>
+        <ldap:use-dns-srv-records>false</ldap:use-dns-srv-records>
+        <ldap:ad-referral>false</ldap:ad-referral>
+        <ldap:credentials>eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2Iiwia2lkIjoiRW1JY1UxOVdueSIsInZlcnNpb24iOiIxMi4wLjAuOSJ9.._zkjZKx_vUFQKr4SIpqV0A.Gq5dVI5lStBzJnScrVOJSw.0zUozBZJprgMLY76kvG9bQ</ldap:credentials>
+        <ldap:authenticationMeth>simple</ldap:authenticationMeth>
+        <ldap:description>${ldap.url.ping}</ldap:description>
+        <ldap:name>pingdirectory</ldap:name>
+        <ldap:binaryAttributes/>
+        <ldap:ldapHostTagList>
+            <ldap:tagEntry host="${ldap.url.ping}" tags=""/>
+        </ldap:ldapHostTagList>
+        <ldap:clientTlsCertAlias xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </ldap:ldap-source>
+</ldap:ldap-sources>
