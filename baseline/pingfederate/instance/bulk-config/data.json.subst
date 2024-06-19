@@ -115,7 +115,7 @@
             "operationType": "SAVE",
             "subResource": "org.sourceid.saml20.domain.mgmt.impl.TrackedHttpParamManagerImpl",
             "items": [{
-                "listValue": [ "cryptogram" ],
+                "listValue": [],
                 "id": "AllowedTrackedParams",
                 "type": "LIST"
             }],
@@ -302,7 +302,7 @@
                 {
                     "hostnamesTags": [{
                         "defaultSource": true,
-                        "hostnames": ["${PD_ENGINE_PRIVATE_HOSTNAME}${OA2_NS_PINGDIR}:${PD_ENGINE_PRIVATE_PORT_LDAP}"]
+                        "hostnames": ["${PD_ENGINE_PRIVATE_HOSTNAME}:${PD_ENGINE_PRIVATE_PORT_LDAP}"]
                     }],
                     "timeBetweenEvictions": 60000,
                     "binaryAttributes": [],
@@ -320,7 +320,7 @@
                     "bindAnonymously": false,
                     "maxWait": -1,
                     "verifyHost": true,
-                    "hostnames": ["${PD_ENGINE_PRIVATE_HOSTNAME}${OA2_NS_PINGDIR}:${PD_ENGINE_PRIVATE_PORT_LDAP}"],
+                    "hostnames": ["${PD_ENGINE_PRIVATE_HOSTNAME}:${PD_ENGINE_PRIVATE_PORT_LDAP}"],
                     "dnsTtl": 60000,
                     "useSsl": false,
                     "maskAttributeValues": false,
@@ -329,286 +329,6 @@
                     "readTimeout": 3000,
                     "name": "pingdirectory",
                     "userDN": "cn=pingfederate"
-                },
-                {
-                    "type": "CUSTOM",
-                    "id": "Other-123AD266317CE18C01B65BF4AC5595C2D024F2B0",
-                    "name": "OSG_RestService",
-                    "pluginDescriptorRef": {
-                        "id": "com.pingidentity.pf.datastore.other.CustomRestDataSourceDriver",
-                        "location": "https://${PF_ADMIN_PUBLIC_HOSTNAME}:${PF_ADMIN_PUBLIC_PORT_HTTPS}/pf-admin-api/v1/dataStores/descriptors/com.pingidentity.pf.datastore.other.CustomRestDataSourceDriver"
-                    },
-                    "configuration": {
-                        "tables": [
-                            {
-                                "name": "Base URLs and Tags",
-                                "rows": [
-                                    {
-                                        "fields": [
-                                            {
-                                                "name": "Base URL",
-                                                "value": "https://osg.paas.santanderbr.pre.corp/api/v1"
-                                            },
-                                            {
-                                                "name": "Tags",
-                                                "value": ""
-                                            }
-                                        ],
-                                        "defaultRow": true
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "HTTP Request Headers",
-                                "rows": []
-                            },
-                            {
-                                "name": "Attributes",
-                                "rows": [
-                                    {
-                                        "fields": [
-                                            {
-                                                "name": "Local Attribute",
-                                                "value": "code"
-                                            },
-                                            {
-                                                "name": "JSON Response Attribute Path",
-                                                "value": "/code"
-                                            }
-                                        ],
-                                        "defaultRow": false
-                                    }
-                                ]
-                            }
-                        ],
-                        "fields": [
-                            {
-                                "name": "Authentication Method",
-                                "value": "None"
-                            },
-                            {
-                                "name": "HTTP Method",
-                                "value": "POST"
-                            },
-                            {
-                                "name": "Username",
-                                "value": ""
-                            },
-                            {
-                                "name": "Password",
-                                "value": ""
-                            },
-                            {
-                                "name": "Password Reference",
-                                "value": ""
-                            },
-                            {
-                                "name": "OAuth Token Endpoint",
-                                "value": ""
-                            },
-                            {
-                                "name": "OAuth Scope",
-                                "value": ""
-                            },
-                            {
-                                "name": "Client ID",
-                                "value": ""
-                            },
-                            {
-                                "name": "Client Secret",
-                                "value": ""
-                            },
-                            {
-                                "name": "Client Secret Reference",
-                                "value": ""
-                            },
-                            {
-                                "name": "Client TLS Certificate",
-                                "value": ""
-                            },
-                            {
-                                "name": "Enable HTTPS Hostname Verification",
-                                "value": "true"
-                            },
-                            {
-                                "name": "Read Timeout (ms)",
-                                "value": "10000"
-                            },
-                            {
-                                "name": "Connection Timeout (ms)",
-                                "value": "10000"
-                            },
-                            {
-                                "name": "Max Payload Size (KB)",
-                                "value": "1024"
-                            },
-                            {
-                                "name": "Retry Request",
-                                "value": "true"
-                            },
-                            {
-                                "name": "Maximum Retries Limit",
-                                "value": "5"
-                            },
-                            {
-                                "name": "Retry Error Codes",
-                                "value": "429"
-                            },
-                            {
-                                "name": "Maximum Connections",
-                                "value": "32"
-                            },
-                            {
-                                "name": "Test Connection URL",
-                                "value": "https://osg.paas.santanderbr.pre.corp:443/api/v1/35/analyze/366"
-                            },
-                            {
-                                "name": "Test Connection Body",
-                                "value": "{     \"2\": \"MBLG\",     \"4\": \"TESTE00000000000000003\",     \"6\": \"teste\",     \"7\": \"10223937\",     \"8\": \"l7pfHBzJ82gOaESJJnmyuIGTojs=\",     \"9\": \"2022-06-19 12:39:52.960\",     \"100\": \"18287634\",     \"101\": \"teste\",     \"102\": \"31391806832\",     \"104\": \"F\",     \"110\": \"001\",     \"1000\": \"033\",     \"1001\": \"0001\",     \"1002\": \"000020268757\",     \"1004\": \"2018-07-26\",     \"1005\": \"01\",     \"1400\": \"01\",     \"1707\": \"user-auth-green-789c4c9f8c-ptzlq\",     \"2000\": \"192.168.77.64\",     \"2002\": \"Android\",     \"2003\": \"29\",     \"2004\": \"-61\",     \"2006\": \"5G- Piazza\",     \"2100\": \"-46.5988373\",     \"2101\": \"-23.5959772\",     \"2102\": \"779\",     \"2103\": \"16\",     \"2104\": \"16\",     \"2107\": \"2022-06-19 12:37:48.517\",     \"2205\": \"Dalvik/2.1.0 (Linux; U; Android 10; moto g(8) plus Build/QPIS30.28-Q3-28-26-4-1-7)\",     \"2501\": \"{'HardwareID':'353594113516418','SIM_ID':'-1','PhoneNumber':'','GeoLocationInfo':[{'Longitude':'-46.5988373','Latitude':'-23.5959772','HorizontalAccuracy':'16','Altitude':'779','AltitudeAccuracy':'16','Timestamp':'1655653068517','Status':0}],'DeviceModel':'moto g(8) plus','MultitaskingSupported':true,'DeviceName':'moto g(8) plus','DeviceSystemName':'Android','DeviceSystemVersion':'29','Languages':'pt','WiFiMacAddress':'02:00:00:00:00:00','WiFiNetworksData':{'BBSID':'e8:20:e2:ec:dd:67','SignalStrength':'-61','Channel':'null','SSID':'5G- Piazza'},'CellTowerId':'28792321','LocationAreaCode':'46111','ScreenSize':'1080x2081','RSA_ApplicationKey':'18F1CA34E4D273B8BCEE8082BA3D8DF9','MCC':'724','MNC':'05','OS_ID':'e60c08d5299c9a0f','SDK_VERSION':'3.6.0','Compromised':0,'Emulator':0,'FrontCameraAvailable':true}\",     \"2503\": \"18F1CA34E4D273B8BCEE8082BA3D8DF9\",     \"2504\": \"-1\",     \"2505\": \"35566909395951122222222222222221232332334343434\",     \"2506\": \"moto g(8) plus\",     \"2507\": \"true\",     \"2508\": \"MOTO G8 PLUS\",     \"2509\": \"pt\",     \"2512\": \"1080x2081\",     \"2514\": \"1\",     \"2515\": \"12.5.0.0\",     \"2516\": \"1\",     \"2517\": \"0\",     \"2518\": \"28792321\",     \"2519\": \"46111\",     \"2520\": \"724\",     \"2521\": \"05\",     \"2525\": \"2\",     \"2532\": \"S\",     \"5014\": \"S\",     \"5036\": \"001\",     \"7012\": \"18F1CA34E4D273B8BCEE8082BA3D8DF9\",     \"8100\": \"AZW8HU8cwIWzb2Y/ewI2uYnK5nLSMrZVKshbvCjxvkNuHI/ZkPandLIsVRAFpvAlc7Ey68qtqNVQqROAtY01UF/KpuLJ0Z8wOWuzffCZ7Pb+rOYVMNc2yXBl8QIcyzIHl+qx4vhe+Q5R3AuZ6vLGkibNCXrHtoxnLm5vgn5U7eZnsatSuiBAFmYpubwnbHoqTbs6+loD976qqg3V3BND8SQSbcs9ki/nCjPGnwVl8+j10C8eZ3nDwhMFM2zDL5+6FAfFMp/uuuZjP0d+0L5tjbvIsiWWbIoOAuw1fWpH30SrD0OhUT4YLRuJTAwydbnGa78nbS27azKPxEubM635vJHI3QBHg3Oyepe/kuqSEBSuAtJfCAcilgU/IDJ9vzDnpq3z3BsfMYPjoj0aXBhCdyN4gnmNHoIQnvomxXP6zYY4zVrJwZZ5ijjLUv68qFYGdSz6oy9AnjdbmKjxoszZJe+6dvnVcgzUL7AFulitJE5usn/yUAJ24GW9hcmPHM7JdYk7ToJ/l8BKVlSpYKnIy6YZwkHor7sOorSGYF8afgc1Gq4DmSIVWqMC1Ognr4YQvT0XYM6tqymopdDg1mJSG9mr/ImHV4wZ80foC5gzF7rJq6KcfpL547GLXnwSgn3xACKLGz+t3GYDs/rCjPFboUeGb8oA66fBHKKMDfhmeLcr63dDaUWZk8mHEj3X25SHrwoRKMBcVBuCXfkGjgP3OvlwB2+p5XuSSdW7/gmDSw7+LXotD0h4YFmjDu7wqOLCR+HXpwbo1V+G7/lceL8CAAHDtcNCxYHNAz2a8/3GaDm5LPSWRhc0I5xebepIu4NnIqYH66pyWiF8VXnV59eMa1cWclQBn+V9YOf/nK7SxEWUv1JMP16cRxumR9sVXQBLpm3ZqD6DIyYYqO7i+n28q4oC31n+hdCtlcYq3ul9htuSjxqyc2WfyQZ8ma2IQaytC6iPbCbJS+7XZYfXbZXmpMx9rke0mvITRiNz1dd6yngFiSvzf1cNRa2nk38mVhrWE23KfAHI7f5jPViLTfi2oWfsgwEiFVolq7tZjKNs/iu6Mnywd7RhYQCnauYiPwW3tZFXp/gd7lfs5W9urAS8pW18EBtw+6cvPFqH1MYV6orWScEJ0JKZoLeyGcY6RUD0T3wjed3FJy2s39nMMAtGwfZ6R+kqb9cfUe7G9TxGIPDUZhLTPJ+gpwtgcX2WWwSeK7eJNFtH9o0XxRAYCv5EPFmXo1ftBBdb5TYimMDCLdD6c1mv2+qvCM+y2+J5jUfn3pziDftz+LRpYzaC623R+9ASrfUoK5ee7SUhXW48JXmEgyxUexSAIyWwl/BuEnVx2ThfT8SDkReb2ZeZJeu1HWjckNPItUzVAtA2wLgZS8VgoDuO49hfAnBe2Q2oYNyyueqPChcXjayHnnvGK9mnnNgsj71hYU5xlxHJ7AY8YDGLK9kmhvOm0hTvoTkYTnw9rTGC1UoQ20lsyNLsj7w8Bg==\" }"
-                            }
-                        ]
-                    },
-                    "maskAttributeValues": false
-                },
-                {
-                    "type": "CUSTOM",
-                    "id": "Other-D912D64E33BF221CA3F4A097C0582FF712209762",
-                    "name": "osg-mock-rest-service",
-                    "pluginDescriptorRef": {
-                        "id": "com.pingidentity.pf.datastore.other.CustomRestDataSourceDriver",
-                        "location": "https://${PF_ADMIN_PUBLIC_HOSTNAME}:${PF_ADMIN_PUBLIC_PORT_HTTPS}/v1/dataStores/descriptors/com.pingidentity.pf.datastore.other.CustomRestDataSourceDriver"
-                    },
-                    "configuration": {
-                        "tables": [
-                            {
-                                "name": "Base URLs and Tags",
-                                "rows": [
-                                    {
-                                        "fields": [
-                                            {
-                                                "name": "Base URL",
-                                                "value": "https://65de2024dccfcd562f5656ed.mockapi.io/api/v1"
-                                            },
-                                            {
-                                                "name": "Tags",
-                                                "value": ""
-                                            }
-                                        ],
-                                        "defaultRow": true
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "HTTP Request Headers",
-                                "rows": []
-                            },
-                            {
-                                "name": "Attributes",
-                                "rows": [
-                                    {
-                                        "fields": [
-                                            {
-                                                "name": "Local Attribute",
-                                                "value": "code"
-                                            },
-                                            {
-                                                "name": "JSON Response Attribute Path",
-                                                "value": "/0/code"
-                                            }
-                                        ],
-                                        "defaultRow": false
-                                    }
-                                ]
-                            }
-                        ],
-                        "fields": [
-                            {
-                                "name": "Authentication Method",
-                                "value": "None"
-                            },
-                            {
-                                "name": "HTTP Method",
-                                "value": "GET"
-                            },
-                            {
-                                "name": "Username",
-                                "value": ""
-                            },
-                            {
-                                "name": "Password",
-                                "value": ""
-                            },
-                            {
-                                "name": "Password Reference",
-                                "value": ""
-                            },
-                            {
-                                "name": "OAuth Token Endpoint",
-                                "value": ""
-                            },
-                            {
-                                "name": "OAuth Scope",
-                                "value": ""
-                            },
-                            {
-                                "name": "Client ID",
-                                "value": ""
-                            },
-                            {
-                                "name": "Client Secret",
-                                "value": ""
-                            },
-                            {
-                                "name": "Client Secret Reference",
-                                "value": ""
-                            },
-                            {
-                                "name": "Client TLS Certificate",
-                                "value": ""
-                            },
-                            {
-                                "name": "Enable HTTPS Hostname Verification",
-                                "value": "true"
-                            },
-                            {
-                                "name": "Read Timeout (ms)",
-                                "value": "10000"
-                            },
-                            {
-                                "name": "Connection Timeout (ms)",
-                                "value": "10000"
-                            },
-                            {
-                                "name": "Max Payload Size (KB)",
-                                "value": "1024"
-                            },
-                            {
-                                "name": "Retry Request",
-                                "value": "true"
-                            },
-                            {
-                                "name": "Maximum Retries Limit",
-                                "value": "5"
-                            },
-                            {
-                                "name": "Retry Error Codes",
-                                "value": "429"
-                            },
-                            {
-                                "name": "Maximum Connections",
-                                "value": "32"
-                            },
-                            {
-                                "name": "Test Connection URL",
-                                "value": "https://65de2024dccfcd562f5656ed.mockapi.io/api/v1/35/analyze/366/fraud"
-                            },
-                            {
-                                "name": "Test Connection Body",
-                                "value": "{     \"2\": \"MBLG\",     \"4\": \"TESTE00000000000000003\",     \"6\": \"teste\",     \"7\": \"10223937\",     \"8\": \"l7pfHBzJ82gOaESJJnmyuIGTojs=\",     \"9\": \"2022-06-19 12:39:52.960\",     \"100\": \"18287634\",     \"101\": \"teste\",     \"102\": \"31391806832\",     \"104\": \"F\",     \"110\": \"001\",     \"1000\": \"033\",     \"1001\": \"0001\",     \"1002\": \"000020268757\",     \"1004\": \"2018-07-26\",     \"1005\": \"01\",     \"1400\": \"01\",     \"1707\": \"user-auth-green-789c4c9f8c-ptzlq\",     \"2000\": \"192.168.77.64\",     \"2002\": \"Android\",     \"2003\": \"29\",     \"2004\": \"-61\",     \"2006\": \"5G- Piazza\",     \"2100\": \"-46.5988373\",     \"2101\": \"-23.5959772\",     \"2102\": \"779\",     \"2103\": \"16\",     \"2104\": \"16\",     \"2107\": \"2022-06-19 12:37:48.517\",     \"2205\": \"Dalvik/2.1.0 (Linux; U; Android 10; moto g(8) plus Build/QPIS30.28-Q3-28-26-4-1-7)\",     \"2501\": \"{'HardwareID':'353594113516418','SIM_ID':'-1','PhoneNumber':'','GeoLocationInfo':[{'Longitude':'-46.5988373','Latitude':'-23.5959772','HorizontalAccuracy':'16','Altitude':'779','AltitudeAccuracy':'16','Timestamp':'1655653068517','Status':0}],'DeviceModel':'moto g(8) plus','MultitaskingSupported':true,'DeviceName':'moto g(8) plus','DeviceSystemName':'Android','DeviceSystemVersion':'29','Languages':'pt','WiFiMacAddress':'02:00:00:00:00:00','WiFiNetworksData':{'BBSID':'e8:20:e2:ec:dd:67','SignalStrength':'-61','Channel':'null','SSID':'5G- Piazza'},'CellTowerId':'28792321','LocationAreaCode':'46111','ScreenSize':'1080x2081','RSA_ApplicationKey':'18F1CA34E4D273B8BCEE8082BA3D8DF9','MCC':'724','MNC':'05','OS_ID':'e60c08d5299c9a0f','SDK_VERSION':'3.6.0','Compromised':0,'Emulator':0,'FrontCameraAvailable':true}\",     \"2503\": \"18F1CA34E4D273B8BCEE8082BA3D8DF9\",     \"2504\": \"-1\",     \"2505\": \"35566909395951122222222222222221232332334343434\",     \"2506\": \"moto g(8) plus\",     \"2507\": \"true\",     \"2508\": \"MOTO G8 PLUS\",     \"2509\": \"pt\",     \"2512\": \"1080x2081\",     \"2514\": \"1\",     \"2515\": \"12.5.0.0\",     \"2516\": \"1\",     \"2517\": \"0\",     \"2518\": \"28792321\",     \"2519\": \"46111\",     \"2520\": \"724\",     \"2521\": \"05\",     \"2525\": \"2\",     \"2532\": \"S\",     \"5014\": \"S\",     \"5036\": \"001\",     \"7012\": \"18F1CA34E4D273B8BCEE8082BA3D8DF9\",     \"8100\": \"AZW8HU8cwIWzb2Y/ewI2uYnK5nLSMrZVKshbvCjxvkNuHI/ZkPandLIsVRAFpvAlc7Ey68qtqNVQqROAtY01UF/KpuLJ0Z8wOWuzffCZ7Pb+rOYVMNc2yXBl8QIcyzIHl+qx4vhe+Q5R3AuZ6vLGkibNCXrHtoxnLm5vgn5U7eZnsatSuiBAFmYpubwnbHoqTbs6+loD976qqg3V3BND8SQSbcs9ki/nCjPGnwVl8+j10C8eZ3nDwhMFM2zDL5+6FAfFMp/uuuZjP0d+0L5tjbvIsiWWbIoOAuw1fWpH30SrD0OhUT4YLRuJTAwydbnGa78nbS27azKPxEubM635vJHI3QBHg3Oyepe/kuqSEBSuAtJfCAcilgU/IDJ9vzDnpq3z3BsfMYPjoj0aXBhCdyN4gnmNHoIQnvomxXP6zYY4zVrJwZZ5ijjLUv68qFYGdSz6oy9AnjdbmKjxoszZJe+6dvnVcgzUL7AFulitJE5usn/yUAJ24GW9hcmPHM7JdYk7ToJ/l8BKVlSpYKnIy6YZwkHor7sOorSGYF8afgc1Gq4DmSIVWqMC1Ognr4YQvT0XYM6tqymopdDg1mJSG9mr/ImHV4wZ80foC5gzF7rJq6KcfpL547GLXnwSgn3xACKLGz+t3GYDs/rCjPFboUeGb8oA66fBHKKMDfhmeLcr63dDaUWZk8mHEj3X25SHrwoRKMBcVBuCXfkGjgP3OvlwB2+p5XuSSdW7/gmDSw7+LXotD0h4YFmjDu7wqOLCR+HXpwbo1V+G7/lceL8CAAHDtcNCxYHNAz2a8/3GaDm5LPSWRhc0I5xebepIu4NnIqYH66pyWiF8VXnV59eMa1cWclQBn+V9YOf/nK7SxEWUv1JMP16cRxumR9sVXQBLpm3ZqD6DIyYYqO7i+n28q4oC31n+hdCtlcYq3ul9htuSjxqyc2WfyQZ8ma2IQaytC6iPbCbJS+7XZYfXbZXmpMx9rke0mvITRiNz1dd6yngFiSvzf1cNRa2nk38mVhrWE23KfAHI7f5jPViLTfi2oWfsgwEiFVolq7tZjKNs/iu6Mnywd7RhYQCnauYiPwW3tZFXp/gd7lfs5W9urAS8pW18EBtw+6cvPFqH1MYV6orWScEJ0JKZoLeyGcY6RUD0T3wjed3FJy2s39nMMAtGwfZ6R+kqb9cfUe7G9TxGIPDUZhLTPJ+gpwtgcX2WWwSeK7eJNFtH9o0XxRAYCv5EPFmXo1ftBBdb5TYimMDCLdD6c1mv2+qvCM+y2+J5jUfn3pziDftz+LRpYzaC623R+9ASrfUoK5ee7SUhXW48JXmEgyxUexSAIyWwl/BuEnVx2ThfT8SDkReb2ZeZJeu1HWjckNPItUzVAtA2wLgZS8VgoDuO49hfAnBe2Q2oYNyyueqPChcXjayHnnvGK9mnnNgsj71hYU5xlxHJ7AY8YDGLK9kmhvOm0hTvoTkYTnw9rTGC1UoQ20lsyNLsj7w8Bg==\" }"
-                            }
-                        ]
-                    },
-                    "maskAttributeValues": false
                 },
                 {
                     "maskAttributeValues": false,
@@ -625,7 +345,6 @@
                     "type": "JDBC",
                     "userName": "sa"
                 }
-
             ],
             "resourceType": "/dataStores"
         },
@@ -778,7 +497,7 @@
                 "name": "simplecontract",
                 "id": "Zxp6N6W5PH9onACT",
                 "coreAttributes": [{"name": "subject"}],
-                "extendedAttributes": [{"name": "cryptogram"}]
+                "extendedAttributes": [{"name": "mail"}]
             }],
             "resourceType": "/authenticationPolicyContracts"
         },
@@ -882,29 +601,7 @@
                                         "value": "true"
                                     }
                                 ]
-                            },    
-                            {
-                                "defaultRow": false,
-                                "fields": [
-                                    {
-                                        "name": "Username",
-                                        "value": "perez"
-                                    },
-                                    {
-                                        "name": "Password",
-                                        "value": "${passwordCredentialValidators_items_simple_configuration_tables_rows_fields_Password_value}"
-                                    },
-                                    {
-                                        "name": "Confirm Password",
-                                        "value": "${passwordCredentialValidators_items_simple_configuration_tables_rows_fields_Confirm_Password_value}"
-                                    },
-                                    {
-                                        "name": "Relax Password Requirements",
-                                        "value": "true"
-                                    }
-                                ]
-                            }
-                        ]
+                            }]
                         }],
                         "fields": []
                     },
@@ -1230,88 +927,7 @@
         },
         {
             "operationType": "SAVE",
-            "items": [
-                {
-                    "id": "AuthenticationConfirmation",
-                    "name": "AuthenticationConfirmation",
-                    "pluginDescriptorRef": {
-                        "id": "com.pingidentity.adapter.idp.AuthenticationConfirmationIdpAdapter",
-                        "location": "https://${PF_ADMIN_PUBLIC_HOSTNAME}:${PF_ADMIN_PUBLIC_PORT_HTTPS}/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapter.idp.AuthenticationConfirmationIdpAdapter"
-                    },
-                    "configuration": {
-                        "tables": [
-                            {
-                                "name": "Attributes",
-                                "rows": [
-                                    {
-                                        "fields": [
-                                            {
-                                                "name": "Attribute Name",
-                                                "value": "cryptogram"
-                                            },
-                                            {
-                                                "name": "Attribute value",
-                                                "value": "${#this.get('chained.attributes.cryptogram')}"
-                                            }
-                                        ],
-                                        "defaultRow": false
-                                    },
-                                    {
-                                        "fields": [
-                                            {
-                                                "name": "Attribute Name",
-                                                "value": "clientid"
-                                            },
-                                            {
-                                                "name": "Attribute value",
-                                                "value": "${#this.get('client.clientId')}"
-                                            }
-                                        ],
-                                        "defaultRow": false
-                                    }
-                                ]
-                            }
-                        ],
-                        "fields": []
-                    },
-                    "attributeContract": {
-                        "coreAttributes": [
-                            {
-                                "name": "policy.action",
-                                "masked": false,
-                                "pseudonym": false
-                            },
-                            {
-                                "name": "username",
-                                "masked": false,
-                                "pseudonym": true
-                            }
-                        ],
-                        "extendedAttributes": [],
-                        "maskOgnlValues": false
-                    },
-                    "attributeMapping": {
-                        "attributeSources": [],
-                        "attributeContractFulfillment": {
-                            "policy.action": {
-                                "source": {
-                                    "type": "ADAPTER"
-                                },
-                                "value": "policy.action"
-                            },
-                            "username": {
-                                "source": {
-                                    "type": "ADAPTER"
-                                },
-                                "value": "username"
-                            }
-                        },
-                        "issuanceCriteria": {
-                            "conditionalCriteria": []
-                        }
-                    }
-                },
-                {
+            "items": [{
                 "attributeMapping": {
                     "attributeContractFulfillment": {
                         "entryUUID": {
@@ -1333,24 +949,13 @@
                 "configuration": {
                     "tables": [{
                         "name": "Credential Validators",
-                        "rows": [
-                            {
-                                "fields": [
-                                    {
-                                        "name": "Password Credential Validator Instance",
-                                        "value": "simple"
-                                    }
-                                ],
-                                "defaultRow": false
-                            },
-                            {
+                        "rows": [{
                             "defaultRow": false,
                             "fields": [{
                                 "name": "Password Credential Validator Instance",
                                 "value": "pingdirectory"
                             }]
-                        }
-                     ]
+                        }]
                     }],
                     "fields": [
                         {
@@ -1573,481 +1178,7 @@
                         "pseudonym": false
                     }]
                 }
-                },
-                {
-                    "id": "HtmlFormWithCryptogram",
-                    "name": "HtmlFormWithCryptogram",
-                    "pluginDescriptorRef": {
-                        "id": "com.pingidentity.adapter.idp.HtmlFormWithCryptogramIdpAdapter",
-                        "location": "https://${PF_ADMIN_PUBLIC_HOSTNAME}:${PF_ADMIN_PUBLIC_PORT_HTTPS}/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapter.idp.HtmlFormWithCryptogramIdpAdapter"
-                    },
-                    "configuration": {
-                        "tables": [
-                            {
-                                "name": "Credential Validators",
-                                "rows": [
-                                    {
-                                        "fields": [
-                                            {
-                                                "name": "Password Credential Validator Instance",
-                                                "value": "simple"
-                                            }
-                                        ],
-                                        "defaultRow": false
-                                    },
-                                    {
-                                        "fields": [
-                                            {
-                                                "name": "Password Credential Validator Instance",
-                                                "value": "pingdirectory"
-                                            }
-                                        ],
-                                        "defaultRow": false
-                                    }
-                                ]
-                            }
-                        ],
-                        "fields": [
-                            {
-                                "name": "Challenge Retries",
-                                "value": "3"
-                            },
-                            {
-                                "name": "Session State",
-                                "value": "None"
-                            },
-                            {
-                                "name": "Session Timeout",
-                                "value": "60"
-                            },
-                            {
-                                "name": "Session Max Timeout",
-                                "value": "480"
-                            },
-                            {
-                                "name": "Allow Password Changes",
-                                "value": "false"
-                            },
-                            {
-                                "name": "Password Management System",
-                                "value": ""
-                            },
-                            {
-                                "name": "Enable 'Remember My Username'",
-                                "value": "false"
-                            },
-                            {
-                                "name": "Enable 'This is My Device'",
-                                "value": "false"
-                            },
-                            {
-                                "name": "Change Password Policy Contract",
-                                "value": ""
-                            },
-                            {
-                                "name": "Change Password Email Notification",
-                                "value": "false"
-                            },
-                            {
-                                "name": "Show Password Expiring Warning",
-                                "value": "false"
-                            },
-                            {
-                                "name": "Password Reset Type",
-                                "value": "NONE"
-                            },
-                            {
-                                "name": "Password Reset Policy Contract",
-                                "value": ""
-                            },
-                            {
-                                "name": "Revoke Sessions After Password Change Or Reset",
-                                "value": "false"
-                            },
-                            {
-                                "name": "Account Unlock",
-                                "value": "false"
-                            },
-                            {
-                                "name": "Local Identity Profile",
-                                "value": ""
-                            },
-                            {
-                                "name": "Notification Publisher",
-                                "value": ""
-                            },
-                            {
-                                "name": "Enable Username Recovery",
-                                "value": "false"
-                            },
-                            {
-                                "name": "System key",
-                                "encryptedValue": "OBF:JWE:eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2Iiwia2lkIjoiRW1JY1UxOVdueSIsInZlcnNpb24iOiIxMi4wLjEuMCJ9..ENV84D-xJFUjRN_uvwIshw.8jF-f8pLMBOK4dQ2l2YdnNzQVRA9Fg7eSKh5P3CkAys.Wdb1t4GVj1Gr-smsg6dsIA"
-                            },
-                            {
-                                "name": "System key type",
-                                "value": "AES"
-                            },
-                            {
-                                "name": "Days to Expire",
-                                "value": "30"
-                            },
-                            {
-                                "name": "Login Template",
-                                "value": "html.form.login.template.html"
-                            },
-                            {
-                                "name": "Logout Path",
-                                "value": ""
-                            },
-                            {
-                                "name": "Logout Redirect",
-                                "value": ""
-                            },
-                            {
-                                "name": "Logout Template",
-                                "value": "idp.logout.success.page.template.html"
-                            },
-                            {
-                                "name": "Change Password Template",
-                                "value": "html.form.change.password.template.html"
-                            },
-                            {
-                                "name": "Change Password Message Template",
-                                "value": "html.form.message.template.html"
-                            },
-                            {
-                                "name": "Password Management System Message Template",
-                                "value": "html.form.message.template.html"
-                            },
-                            {
-                                "name": "Password Update Timeout",
-                                "value": "30"
-                            },
-                            {
-                                "name": "Change Password Email Template",
-                                "value": "message-template-end-user-password-change.html"
-                            },
-                            {
-                                "name": "Expiring Password Warning Template",
-                                "value": "html.form.password.expiring.notification.template.html"
-                            },
-                            {
-                                "name": "Threshold for Expiring Password Warning",
-                                "value": "7"
-                            },
-                            {
-                                "name": "Snooze Interval for Expiring Password Warning",
-                                "value": "24"
-                            },
-                            {
-                                "name": "Require Re-Authentication For Expiring Password Flow",
-                                "value": "false"
-                            },
-                            {
-                                "name": "Require Re-Authentication for Change Password Flow",
-                                "value": "false"
-                            },
-                            {
-                                "name": "Require Re-Authentication for Password Reset Flow",
-                                "value": "false"
-                            },
-                            {
-                                "name": "Login Challenge Template",
-                                "value": "html.form.login.challenge.template.html"
-                            },
-                            {
-                                "name": "'Remember My Username' Lifetime",
-                                "value": "30"
-                            },
-                            {
-                                "name": "'This is My Device' Lifetime",
-                                "value": "30"
-                            },
-                            {
-                                "name": "Allow Username Edits During Chaining",
-                                "value": "false"
-                            },
-                            {
-                                "name": "Track Authentication Time",
-                                "value": "true"
-                            },
-                            {
-                                "name": "Post-Password Change Re-Authentication Delay",
-                                "value": "0"
-                            },
-                            {
-                                "name": "Password Reset One-Time Link Email Template",
-                                "value": "message-template-forgot-password-link.html"
-                            },
-                            {
-                                "name": "Password Reset One-Time Password Email Template",
-                                "value": "message-template-forgot-password-code.html"
-                            },
-                            {
-                                "name": "Account Disabled Email Template",
-                                "value": "message-template-account-disabled.html"
-                            },
-                            {
-                                "name": "Password Reset Complete Email Template",
-                                "value": "message-template-forgot-password-complete.html"
-                            },
-                            {
-                                "name": "Password Reset Failed Email Template",
-                                "value": "message-template-forgot-password-failed.html"
-                            },
-                            {
-                                "name": "Password Reset Username Template",
-                                "value": "forgot-password.html"
-                            },
-                            {
-                                "name": "Password Reset Code Template",
-                                "value": "forgot-password-resume.html"
-                            },
-                            {
-                                "name": "Password Reset Template",
-                                "value": "forgot-password-change.html"
-                            },
-                            {
-                                "name": "Password Reset Error Template",
-                                "value": "forgot-password-error.html"
-                            },
-                            {
-                                "name": "Password Reset Success Template",
-                                "value": "forgot-password-success.html"
-                            },
-                            {
-                                "name": "Account Unlock Template",
-                                "value": "account-unlock.html"
-                            },
-                            {
-                                "name": "Account Unlock Email Template",
-                                "value": "message-template-account-unlock-complete.html"
-                            },
-                            {
-                                "name": "OTP Length",
-                                "value": "8"
-                            },
-                            {
-                                "name": "Allowed OTP Character Set",
-                                "value": "23456789BCDFGHJKMNPQRSTVWXZbcdfghjkmnpqrstvwxz"
-                            },
-                            {
-                                "name": "OTP Time to Live",
-                                "value": "10"
-                            },
-                            {
-                                "name": "PingID Properties",
-                                "value": ""
-                            },
-                            {
-                                "name": "Require Verified Email",
-                                "value": "false"
-                            },
-                            {
-                                "name": "Username Recovery Template",
-                                "value": "username.recovery.template.html"
-                            },
-                            {
-                                "name": "Username Recovery Info Template",
-                                "value": "username.recovery.info.template.html"
-                            },
-                            {
-                                "name": "Username Recovery Email Template",
-                                "value": "message-template-username-recovery.html"
-                            },
-                            {
-                                "name": "CAPTCHA Provider",
-                                "value": ""
-                            },
-                            {
-                                "name": "CAPTCHA for Authentication",
-                                "value": "false"
-                            },
-                            {
-                                "name": "CAPTCHA for Password change",
-                                "value": "false"
-                            },
-                            {
-                                "name": "CAPTCHA for Password Reset",
-                                "value": "false"
-                            },
-                            {
-                                "name": "CAPTCHA for Username recovery",
-                                "value": "false"
-                            },
-                            {
-                                "name": "Fail Authentication on Account Lockout",
-                                "value": "false"
-                            }
-                        ]
-                    },
-                    "attributeContract": {
-                        "coreAttributes": [
-                            {
-                                "name": "policy.action",
-                                "masked": false,
-                                "pseudonym": false
-                            },
-                            {
-                                "name": "username",
-                                "masked": false,
-                                "pseudonym": true
-                            },
-                            {
-                                "name": "cryptogram",
-                                "masked": false,
-                                "pseudonym": false
-                            }
-                        ],
-                        "extendedAttributes": [],
-                        "maskOgnlValues": false
-                    },
-                    "attributeMapping": {
-                        "attributeSources": [],
-                        "attributeContractFulfillment": {
-                            "policy.action": {
-                                "source": {
-                                    "type": "ADAPTER"
-                                },
-                                "value": "policy.action"
-                            },
-                            "cryptogram": {
-                                "source": {
-                                    "type": "ADAPTER"
-                                },
-                                "value": "cryptogram"
-                            },
-                            "username": {
-                                "source": {
-                                    "type": "ADAPTER"
-                                },
-                                "value": "username"
-                            }
-                        },
-                        "issuanceCriteria": {
-                            "conditionalCriteria": []
-                        }
-                    }
-                },
-                {
-                    "id": "OSGRestIdpAdapter",
-                    "name": "OSGRestIdpAdapter",
-                    "pluginDescriptorRef": {
-                        "id": "com.pingidentity.adapter.idp.RestIdpAdapter",
-                        "location": "https://${PF_ADMIN_PUBLIC_HOSTNAME}:${PF_ADMIN_PUBLIC_PORT_HTTPS}/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapter.idp.RestIdpAdapter"
-                    },
-                    "configuration": {
-                        "tables": [
-                            {
-                                "name": "REST Paths",
-                                "rows": []
-                            },
-                            {
-                                "name": "HTTP Headers",
-                                "rows": []
-                            },
-                            {
-                                "name": "Sucess Response JSON Object Table",
-                                "rows": [
-                                    {
-                                        "fields": [
-                                            {
-                                                "name": "Response JSON Object Path",
-                                                "value": "code"
-                                            },
-                                            {
-                                                "name": "Response JSON Object Value",
-                                                "value": "0"
-                                            }
-                                        ],
-                                        "defaultRow": false
-                                    }
-                                ]
-                            }
-                        ],
-                        "fields": [
-                            {
-                                "name": "Default REST Web Service Path",
-                                "value": "/${#this.get('client.OSG_CHANNEL')}/analyze/${#this.get('client.OSG_TRANSACTION')}"
-                            },
-                            {
-                                "name": "REST Data Store Name",
-                                "value": "OSG_RestService"
-                            },
-                            {
-                                "name": "HTTP Body",
-                                "value": "${@com.pingidentity.common.util.B64@decodeToString(#this.get('header.X-Risk-Eval'))}"
-                            },
-                            {
-                                "name": "Success HTTP Status Code",
-                                "value": "200"
-                            }
-                        ]
-                    },
-                    "lastModified": "2024-04-25T14:54:54.595Z",
-                    "attributeContract": {
-                        "coreAttributes": [
-                            {
-                                "name": "policy.action",
-                                "masked": false,
-                                "pseudonym": false
-                            },
-                            {
-                                "name": "HTTP_STATUS_CODE",
-                                "masked": false,
-                                "pseudonym": false
-                            },
-                            {
-                                "name": "HTTP_STATUS_MESSAGE",
-                                "masked": false,
-                                "pseudonym": false
-                            },
-                            {
-                                "name": "username",
-                                "masked": false,
-                                "pseudonym": true
-                            }
-                        ],
-                        "extendedAttributes": [],
-                        "maskOgnlValues": false
-                    },
-                    "attributeMapping": {
-                        "attributeSources": [],
-                        "attributeContractFulfillment": {
-                            "policy.action": {
-                                "source": {
-                                    "type": "ADAPTER"
-                                },
-                                "value": "policy.action"
-                            },
-                            "transport.http.statusCode": {
-                                "source": {
-                                    "type": "ADAPTER"
-                                },
-                                "value": "transport.http.statusCode"
-                            },
-                            "transport.http.statusMessage": {
-                                "source": {
-                                    "type": "ADAPTER"
-                                },
-                                "value": "transport.http.statusMessage"
-                            },
-                            "username": {
-                                "source": {
-                                    "type": "ADAPTER"
-                                },
-                                "value": "username"
-                            }
-                        },
-                        "issuanceCriteria": {
-                            "conditionalCriteria": []
-                        }
-                    }
-                }
-
-             
-            ],
+            }],
             "resourceType": "/idp/adapters"
         },
         {
@@ -2107,22 +1238,6 @@
             "operationType": "SAVE",
             "items": [{"confirmSlo": false}],
             "resourceType": "/sp/defaultUrls"
-        },
-        {
-            "resourceType": "/extendedProperties",
-            "operationType": "SAVE",
-            "items": [
-                {
-                    "name": "OSG_CHANNEL",
-                    "description": "",
-                    "multiValued": false
-                },
-                {
-                    "name": "OSG_TRANSACTION",
-                    "description": "",
-                    "multiValued": false
-                }
-            ]
         },
         {
             "operationType": "SAVE",
@@ -2790,217 +1905,75 @@
             "items": [{
                 "defaultAuthenticationSources": [],
                 "failIfNoSelection": false,
-                "authnSelectionTrees": [
-                    {
-                        "rootNode": { 
-                            "action": {
-                                "type": "AUTHN_SOURCE",
-                                "authenticationSource": {
-                                    "type": "IDP_ADAPTER",
-                                    "sourceRef": {
-                                        "id": "HTMLFormPD",
-                                        "location": "https://${PF_ADMIN_PUBLIC_HOSTNAME}:${PF_ADMIN_PUBLIC_PORT_HTTPS}/pf-admin-api/v1/idp/adapters/HTMLFormPD"
-                                    }
-                                }
-                            },
-                            "children": [
-                                {
-                                    "action": {
-                                        "type": "DONE",
-                                        "context": "Fail"
-                                    }
+                "authnSelectionTrees": [{
+                    "name": "Default AuthN Policy",
+                    "enabled": true,
+                    "rootNode": {
+                        "children": [
+                            {"action": {
+                                "context": "Fail",
+                                "type": "DONE"
+                            }},
+                            {"action": {
+                                "localIdentityRef": {
+                                    "location": "https://${PF_ADMIN_PUBLIC_HOSTNAME}:${PF_ADMIN_PUBLIC_PORT_HTTPS}/pf-admin-api/v1/localIdentity/identityProfiles/RBSQIwi5KWYN9ZGK",
+                                    "id": "RBSQIwi5KWYN9ZGK"
                                 },
-                                {
-                                    "action": {
-                                        "type": "AUTHN_SOURCE",
-                                        "context": "Success",
-                                        "authenticationSource": {
-                                            "type": "IDP_ADAPTER",
-                                            "sourceRef": {
-                                                "id": "OSGRestIdpAdapter",
-                                                "location": "https://${PF_ADMIN_PUBLIC_HOSTNAME}:${PF_ADMIN_PUBLIC_PORT_HTTPS}/pf-admin-api/v1/idp/adapters/OSGRestIdpAdapter"
-                                            }
+                                "inboundMapping": {
+                                    "attributeContractFulfillment": {"pf.local.identity.unique.id": {
+                                        "source": {
+                                            "id": "HTMLFormPD",
+                                            "type": "ADAPTER"
+                                        },
+                                        "value": "username"
+                                    }},
+                                    "attributeSources": [],
+                                    "issuanceCriteria": {"conditionalCriteria": []}
+                                },
+                                "context": "Success",
+                                "outboundAttributeMapping": {
+                                    "attributeContractFulfillment": {
+                                        "mail": {
+                                            "source": {
+                                                "id": "RBSQIwi5KWYN9ZGK",
+                                                "type": "LOCAL_IDENTITY_PROFILE"
+                                            },
+                                            "value": "mail"
+                                        },
+                                        "subject": {
+                                            "source": {
+                                                "id": "RBSQIwi5KWYN9ZGK",
+                                                "type": "LOCAL_IDENTITY_PROFILE"
+                                            },
+                                            "value": "entryUUID"
                                         }
                                     },
-                                    "children": [
-                                        {
-                                            "action": {
-                                                "type": "DONE",
-                                                "context": "Fail"
-                                            }
-                                        },
-                                        {
-                                            "action": {
-                                                "type": "AUTHN_SOURCE",
-                                                "context": "Success",
-                                                "authenticationSource": {
-                                                    "type": "IDP_ADAPTER",
-                                                    "sourceRef": {
-                                                        "id": "AuthenticationConfirmation",
-                                                        "location": "https://${PF_ADMIN_PUBLIC_HOSTNAME}:${PF_ADMIN_PUBLIC_PORT_HTTPS}/pf-admin-api/v1/idp/adapters/AuthenticationConfirmation"
-                                                    }
-                                                }
-                                            },
-                                            "children": [
-                                                {
-                                                    "action": {
-                                                        "type": "DONE",
-                                                        "context": "Fail"
-                                                    }
-                                                },
-                                                {
-                                                    "action": {
-                                                        "type": "APC_MAPPING",
-                                                        "context": "Success",
-                                                        "authenticationPolicyContractRef": {
-                                                            "id": "Zxp6N6W5PH9onACT",
-                                                            "location": "https://${PF_ADMIN_PUBLIC_HOSTNAME}:${PF_ADMIN_PUBLIC_PORT_HTTPS}/pf-admin-api/v1/authenticationPolicyContracts/Zxp6N6W5PH9onACT"
-                                                        },
-                                                        "attributeMapping": {
-                                                            "attributeSources": [],
-                                                            "attributeContractFulfillment": {
-                                                                "subject": {
-                                                                    "source": {
-                                                                        "type": "ADAPTER",
-                                                                        "id": "HTMLFormPD"
-                                                                    },
-                                                                    "value": "username"
-                                                                },
-                                                                "cryptogram": {
-                                                                    "source": {
-                                                                        "type": "ADAPTER",
-                                                                        "id": "HTMLFormPD"
-                                                                    },
-                                                                    "value": "username"
-                                                                }
-                                                            },
-                                                            "issuanceCriteria": {
-                                                                "conditionalCriteria": []
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        "id": "CN4tk6k895DC3AParOSbkaHcD",
-                        "name": "Default AuthN Policy",
-                        "enabled": false,
-                        "handleFailuresLocally": false
-                    },
-                    {
-                        "rootNode": {
-                            "action": {
-                                "type": "AUTHN_SOURCE",
-                                "authenticationSource": {
-                                    "type": "IDP_ADAPTER",
-                                    "sourceRef": {
-                                        "id": "HtmlFormWithCryptogram",
-                                        "location": "https://${PF_ADMIN_PUBLIC_HOSTNAME}:${PF_ADMIN_PUBLIC_PORT_HTTPS}/pf-admin-api/v1/idp/adapters/HtmlFormWithCryptogram"
-                                    }
+                                    "attributeSources": [],
+                                    "issuanceCriteria": {"conditionalCriteria": []}
+                                },
+                                "type": "LOCAL_IDENTITY_MAPPING"
+                            }}
+                        ],
+                        "action": {
+                            "authenticationSource": {
+                                "type": "IDP_ADAPTER",
+                                "sourceRef": {
+                                    "location": "https://${PF_ADMIN_PUBLIC_HOSTNAME}:${PF_ADMIN_PUBLIC_PORT_HTTPS}/pf-admin-api/v1/idp/adapters/HTMLFormPD",
+                                    "id": "HTMLFormPD"
                                 }
                             },
-                            "children": [
-                                {
-                                    "action": {
-                                        "type": "DONE",
-                                        "context": "Fail"
-                                    }
-                                },
-                                {
-                                    "action": {
-                                        "type": "AUTHN_SOURCE",
-                                        "context": "Success",
-                                        "authenticationSource": {
-                                            "type": "IDP_ADAPTER",
-                                            "sourceRef": {
-                                                "id": "OSGRestIdpAdapter",
-                                                "location": "https://${PF_ADMIN_PUBLIC_HOSTNAME}:${PF_ADMIN_PUBLIC_PORT_HTTPS}/pf-admin-api/v1/idp/adapters/OSGRestIdpAdapter"
-                                            }
-                                        }
-                                    },
-                                    "children": [
-                                        {
-                                            "action": {
-                                                "type": "DONE",
-                                                "context": "Fail"
-                                            }
-                                        },
-                                        {
-                                            "action": {
-                                                "type": "AUTHN_SOURCE",
-                                                "context": "Success",
-                                                "authenticationSource": {
-                                                    "type": "IDP_ADAPTER",
-                                                    "sourceRef": {
-                                                        "id": "AuthenticationConfirmation",
-                                                        "location": "https://${PF_ADMIN_PUBLIC_HOSTNAME}:${PF_ADMIN_PUBLIC_PORT_HTTPS}/pf-admin-api/v1/idp/adapters/AuthenticationConfirmation"
-                                                    }
-                                                }
-                                            },
-                                            "children": [
-                                                {
-                                                    "action": {
-                                                        "type": "DONE",
-                                                        "context": "Fail"
-                                                    }
-                                                },
-                                                {
-                                                    "action": {
-                                                        "type": "APC_MAPPING",
-                                                        "context": "Success",
-                                                        "authenticationPolicyContractRef": {
-                                                            "id": "Zxp6N6W5PH9onACT",
-                                                            "location": "https://${PF_ADMIN_PUBLIC_HOSTNAME}:${PF_ADMIN_PUBLIC_PORT_HTTPS}/pf-admin-api/v1/authenticationPolicyContracts/Zxp6N6W5PH9onACT"
-                                                        },
-                                                        "attributeMapping": {
-                                                            "attributeSources": [],
-                                                            "attributeContractFulfillment": {
-                                                                "subject": {
-                                                                    "source": {
-                                                                        "type": "ADAPTER",
-                                                                        "id": "HtmlFormWithCryptogram"
-                                                                    },
-                                                                    "value": "username"
-                                                                },
-                                                                "cryptogram": {
-                                                                    "source": {
-                                                                        "type": "ADAPTER",
-                                                                        "id": "HtmlFormWithCryptogram"
-                                                                    },
-                                                                    "value": "cryptogram"
-                                                                }
-                                                            },
-                                                            "issuanceCriteria": {
-                                                                "conditionalCriteria": []
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        "id": "hMwQAVmw35MVNwGj5Gqnxk4XL",
-                        "name": "MFA Policy",
-                        "enabled": true,
-                        "handleFailuresLocally": false
+                            "type": "AUTHN_SOURCE"
+                        }
                     }
-            ],
-                "trackedHttpParameters": ["cryptogram"]
+                }],
+                "trackedHttpParameters": []
             }],
             "resourceType": "/authenticationPolicies/default"
         },
-
         {
             "operationType": "SAVE",
             "items": [{
-                "enableSpAuthnSelection": true,
+                "enableSpAuthnSelection": false,
                 "enableIdpAuthnSelection": true
             }],
             "resourceType": "/authenticationPolicies/settings"
